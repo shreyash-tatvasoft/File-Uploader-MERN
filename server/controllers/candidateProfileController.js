@@ -41,27 +41,6 @@ class CandidateProfileController {
     }
 
     static deleteProfile =  async (req, res) => {
-        // try {
-        //     const id = req.params.id;
-        //     const candidates = await CandidateProfileModel.findByIdAndDelete({_id : id})
-
-        //     const filePath = '/public/uploads/pimage/' + candidates.pimage;
-        //     fs.unlink(filePath, (err)=> {
-        //         if (err) {
-        //             console.error('Error removing file:', err);
-        //           } else {
-        //             console.log('File removed successfully');
-        //           }
-        //     })
-        //     if(!candidates) {
-        //         res.status(404).send({ "info": 'Record not found'});
-        //     } else {
-        //         res.status(200).send({ success : "Profile deleted successfully"})
-        //     }
-        // } catch (error) {
-        //     console.log(error)
-        // }
-
         try {
             const record = await CandidateProfileModel.findById(req.params.id);
             if (!record) {
